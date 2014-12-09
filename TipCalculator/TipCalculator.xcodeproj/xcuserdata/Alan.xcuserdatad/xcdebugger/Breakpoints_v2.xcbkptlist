@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TipCalculator/ViewController.swift"
+            timestampString = "439785248.328433"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TipCalculator.ViewController.resultsTextView.getter : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITextView&gt;"
+                  moduleName = "TipCalculator"
+                  urlString = "file:///Users/Alan/Code/zebibits/TipCalculator/TipCalculator/ViewController.swift"
+                  timestampString = "439785248.478056"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TipCalculator.ViewController.resultsTextView.setter : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITextView&gt;"
+                  moduleName = "TipCalculator"
+                  urlString = "file:///Users/Alan/Code/zebibits/TipCalculator/TipCalculator/ViewController.swift"
+                  timestampString = "439785248.47946"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TipCalculator.ViewController.resultsTextView.materializeForSet : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITextView&gt;"
+                  moduleName = "TipCalculator"
+                  urlString = "file:///Users/Alan/Code/zebibits/TipCalculator/TipCalculator/ViewController.swift"
+                  timestampString = "439785248.479634"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TipCalculator.ViewController.init (TipCalculator.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; TipCalculator.ViewController"
+                  moduleName = "TipCalculator"
+                  urlString = "file:///Users/Alan/Code/zebibits/TipCalculator/TipCalculator/ViewController.swift"
+                  timestampString = "439785248.47981"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TipCalculator.ViewController.init (TipCalculator.ViewController.Type)() -&gt; TipCalculator.ViewController"
+                  moduleName = "TipCalculator"
+                  urlString = "file:///Users/Alan/Code/zebibits/TipCalculator/TipCalculator/ViewController.swift"
+                  timestampString = "439785248.479946"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TipCalculator.ViewController.init (TipCalculator.ViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; TipCalculator.ViewController"
+                  moduleName = "TipCalculator"
+                  urlString = "file:///Users/Alan/Code/zebibits/TipCalculator/TipCalculator/ViewController.swift"
+                  timestampString = "439785248.480083"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

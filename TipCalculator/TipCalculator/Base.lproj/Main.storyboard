@@ -32,55 +32,71 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YC1-dn-tpR">
                                 <rect key="frame" x="192" y="72" width="268" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="268" id="cZm-YP-cuh"/>
+                                    <constraint firstAttribute="width" constant="268" id="UUn-ut-NNW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="taxPercentageChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="zCd-Mf-nmv"/>
+                                </connections>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="mN9-kK-mgf">
                                 <rect key="frame" x="190" y="111" width="272" height="31"/>
                             </slider>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpF-bD-Sft">
+                                <rect key="frame" x="20" y="187" width="440" height="288"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S44-3w-tO7">
                                 <rect key="frame" x="208" y="149" width="65" height="30"/>
                                 <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculateTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1AB-vc-JgL"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpF-bD-Sft">
-                                <rect key="frame" x="20" y="187" width="440" height="288"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="S44-3w-tO7" firstAttribute="top" secondItem="mN9-kK-mgf" secondAttribute="bottom" constant="8" symbolic="YES" id="01q-T7-z4p"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="XpF-bD-Sft" secondAttribute="bottom" constant="125" id="1Y8-Ni-QZR"/>
-                            <constraint firstItem="iFS-Hl-kel" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="17" id="23l-9T-8F6"/>
-                            <constraint firstItem="mN9-kK-mgf" firstAttribute="trailing" secondItem="XpF-bD-Sft" secondAttribute="trailing" id="CjG-2W-1Qa"/>
-                            <constraint firstItem="YC1-dn-tpR" firstAttribute="leading" secondItem="mN9-kK-mgf" secondAttribute="leading" id="HCd-WK-rAk"/>
-                            <constraint firstItem="mN9-kK-mgf" firstAttribute="bottom" secondItem="g4J-Un-0g8" secondAttribute="bottom" id="JCj-7j-tmz"/>
-                            <constraint firstItem="YC1-dn-tpR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="LI1-9Y-FZy"/>
-                            <constraint firstItem="YC1-dn-tpR" firstAttribute="trailing" secondItem="mN9-kK-mgf" secondAttribute="trailing" id="feK-nU-7j9"/>
-                            <constraint firstItem="g4J-Un-0g8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="hmf-kQ-ggC"/>
-                            <constraint firstItem="mN9-kK-mgf" firstAttribute="top" secondItem="iFS-Hl-kel" secondAttribute="bottom" constant="9" id="ht4-uW-220"/>
-                            <constraint firstItem="XpF-bD-Sft" firstAttribute="top" secondItem="S44-3w-tO7" secondAttribute="bottom" constant="8" symbolic="YES" id="kAM-HY-p30"/>
-                            <constraint firstItem="YC1-dn-tpR" firstAttribute="bottom" secondItem="iFS-Hl-kel" secondAttribute="bottom" id="m4X-tO-Svc"/>
-                            <constraint firstItem="XpF-bD-Sft" firstAttribute="centerX" secondItem="S44-3w-tO7" secondAttribute="centerX" id="obw-7g-GdK"/>
-                            <constraint firstItem="g4J-Un-0g8" firstAttribute="leading" secondItem="XpF-bD-Sft" secondAttribute="leading" id="rfg-1c-wPG"/>
-                            <constraint firstItem="mN9-kK-mgf" firstAttribute="leading" secondItem="g4J-Un-0g8" secondAttribute="trailing" constant="21" id="uZN-7D-DJb"/>
+                            <constraint firstItem="S44-3w-tO7" firstAttribute="top" secondItem="mN9-kK-mgf" secondAttribute="bottom" constant="8" symbolic="YES" id="0R6-qK-heo"/>
+                            <constraint firstItem="g4J-Un-0g8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="4nS-Yh-mT3"/>
+                            <constraint firstItem="YC1-dn-tpR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="7aL-83-Bsf"/>
+                            <constraint firstItem="XpF-bD-Sft" firstAttribute="centerX" secondItem="S44-3w-tO7" secondAttribute="centerX" id="GJb-xj-AGj"/>
+                            <constraint firstItem="XpF-bD-Sft" firstAttribute="trailing" secondItem="mN9-kK-mgf" secondAttribute="trailing" id="NUR-Y2-g12"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="XpF-bD-Sft" secondAttribute="bottom" constant="125" id="OWw-3q-72c"/>
+                            <constraint firstItem="g4J-Un-0g8" firstAttribute="bottom" secondItem="mN9-kK-mgf" secondAttribute="bottom" id="Pjc-dQ-kwq"/>
+                            <constraint firstItem="XpF-bD-Sft" firstAttribute="top" secondItem="S44-3w-tO7" secondAttribute="bottom" constant="8" symbolic="YES" id="SIS-gM-CBy"/>
+                            <constraint firstItem="YC1-dn-tpR" firstAttribute="trailing" secondItem="mN9-kK-mgf" secondAttribute="trailing" id="UDa-mX-LFo"/>
+                            <constraint firstItem="iFS-Hl-kel" firstAttribute="bottom" secondItem="YC1-dn-tpR" secondAttribute="bottom" id="cwW-14-h9W"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="top" secondItem="iFS-Hl-kel" secondAttribute="bottom" constant="9" id="e9e-1c-wBf"/>
+                            <constraint firstItem="XpF-bD-Sft" firstAttribute="leading" secondItem="g4J-Un-0g8" secondAttribute="leading" id="n80-L2-2kS"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="leading" secondItem="g4J-Un-0g8" secondAttribute="trailing" constant="21" id="oud-ts-Hrg"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="leading" secondItem="YC1-dn-tpR" secondAttribute="leading" id="s5J-zD-Pzd"/>
+                            <constraint firstItem="iFS-Hl-kel" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="17" id="yZ1-YS-jFz"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="96T-jv-lwF" appends="YES" id="GAB-x5-gZR"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="4vb-m5-0UR"/>
+                    <connections>
+                        <outlet property="resultsTextView" destination="XpF-bD-Sft" id="MNg-0G-o16"/>
+                        <outlet property="taxPctLabel" destination="iFS-Hl-kel" id="QK7-9z-g9O"/>
+                        <outlet property="taxPctSlider" destination="mN9-kK-mgf" id="b9S-lF-Jz9"/>
+                        <outlet property="totalTextField" destination="YC1-dn-tpR" id="hBv-t4-Tf3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="96T-jv-lwF"/>
+                <tapGestureRecognizer id="96T-jv-lwF">
+                    <connections>
+                        <action selector="viewTapped:" destination="vXZ-lx-hvc" id="srx-Hl-wpU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="979" y="226"/>
         </scene>
