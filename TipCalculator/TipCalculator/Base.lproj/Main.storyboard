@@ -18,21 +18,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Total (Post-Tax):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4J-Un-0g8">
-                                <rect key="frame" x="20" y="120" width="151" height="21"/>
+                                <rect key="frame" x="29" y="81" width="151" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax Percentage (0%):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFS-Hl-kel">
-                                <rect key="frame" x="33" y="81" width="164" height="21"/>
+                                <rect key="frame" x="20" y="115" width="164" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YC1-dn-tpR">
-                                <rect key="frame" x="192" y="72" width="268" height="30"/>
+                                <rect key="frame" x="192" y="77" width="268" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="268" id="UUn-ut-NNW"/>
+                                    <constraint firstAttribute="width" constant="268" id="EhF-vj-6G9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -40,13 +40,10 @@
                                     <action selector="taxPercentageChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="zCd-Mf-nmv"/>
                                 </connections>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="mN9-kK-mgf">
-                                <rect key="frame" x="190" y="111" width="272" height="31"/>
-                            </slider>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpF-bD-Sft">
                                 <rect key="frame" x="20" y="187" width="440" height="288"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -59,25 +56,30 @@
                                     <action selector="calculateTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1AB-vc-JgL"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="mN9-kK-mgf">
+                                <rect key="frame" x="190" y="111" width="272" height="31"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="S44-3w-tO7" firstAttribute="top" secondItem="mN9-kK-mgf" secondAttribute="bottom" constant="8" symbolic="YES" id="0R6-qK-heo"/>
-                            <constraint firstItem="g4J-Un-0g8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="4nS-Yh-mT3"/>
-                            <constraint firstItem="YC1-dn-tpR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="7aL-83-Bsf"/>
-                            <constraint firstItem="XpF-bD-Sft" firstAttribute="centerX" secondItem="S44-3w-tO7" secondAttribute="centerX" id="GJb-xj-AGj"/>
-                            <constraint firstItem="XpF-bD-Sft" firstAttribute="trailing" secondItem="mN9-kK-mgf" secondAttribute="trailing" id="NUR-Y2-g12"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="XpF-bD-Sft" secondAttribute="bottom" constant="125" id="OWw-3q-72c"/>
-                            <constraint firstItem="g4J-Un-0g8" firstAttribute="bottom" secondItem="mN9-kK-mgf" secondAttribute="bottom" id="Pjc-dQ-kwq"/>
-                            <constraint firstItem="XpF-bD-Sft" firstAttribute="top" secondItem="S44-3w-tO7" secondAttribute="bottom" constant="8" symbolic="YES" id="SIS-gM-CBy"/>
-                            <constraint firstItem="YC1-dn-tpR" firstAttribute="trailing" secondItem="mN9-kK-mgf" secondAttribute="trailing" id="UDa-mX-LFo"/>
-                            <constraint firstItem="iFS-Hl-kel" firstAttribute="bottom" secondItem="YC1-dn-tpR" secondAttribute="bottom" id="cwW-14-h9W"/>
-                            <constraint firstItem="mN9-kK-mgf" firstAttribute="top" secondItem="iFS-Hl-kel" secondAttribute="bottom" constant="9" id="e9e-1c-wBf"/>
-                            <constraint firstItem="XpF-bD-Sft" firstAttribute="leading" secondItem="g4J-Un-0g8" secondAttribute="leading" id="n80-L2-2kS"/>
-                            <constraint firstItem="mN9-kK-mgf" firstAttribute="leading" secondItem="g4J-Un-0g8" secondAttribute="trailing" constant="21" id="oud-ts-Hrg"/>
-                            <constraint firstItem="mN9-kK-mgf" firstAttribute="leading" secondItem="YC1-dn-tpR" secondAttribute="leading" id="s5J-zD-Pzd"/>
-                            <constraint firstItem="iFS-Hl-kel" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="17" id="yZ1-YS-jFz"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="XpF-bD-Sft" secondAttribute="bottom" constant="125" id="0az-uu-u2A"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="leading" secondItem="iFS-Hl-kel" secondAttribute="trailing" constant="8" symbolic="YES" id="2n4-rm-iGY"/>
+                            <constraint firstItem="iFS-Hl-kel" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="55x-5h-x54"/>
+                            <constraint firstItem="XpF-bD-Sft" firstAttribute="top" secondItem="S44-3w-tO7" secondAttribute="bottom" constant="8" symbolic="YES" id="61F-WP-xsO"/>
+                            <constraint firstItem="YC1-dn-tpR" firstAttribute="trailing" secondItem="mN9-kK-mgf" secondAttribute="trailing" id="Clr-h0-nG1"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="trailing" secondItem="XpF-bD-Sft" secondAttribute="trailing" id="CnK-is-hT6"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="leading" secondItem="YC1-dn-tpR" secondAttribute="leading" id="Coe-gs-9HP"/>
+                            <constraint firstItem="YC1-dn-tpR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="13" id="DC7-WM-J8Z"/>
+                            <constraint firstItem="iFS-Hl-kel" firstAttribute="top" secondItem="g4J-Un-0g8" secondAttribute="bottom" constant="13" id="FJL-VK-uCN"/>
+                            <constraint firstItem="XpF-bD-Sft" firstAttribute="leading" secondItem="iFS-Hl-kel" secondAttribute="leading" id="Jgj-d8-4Qr"/>
+                            <constraint firstItem="YC1-dn-tpR" firstAttribute="leading" secondItem="g4J-Un-0g8" secondAttribute="trailing" constant="12" id="LEW-hK-AUB"/>
+                            <constraint firstAttribute="centerY" secondItem="XpF-bD-Sft" secondAttribute="centerY" constant="-31" id="PcJ-Qj-hzg"/>
+                            <constraint firstItem="XpF-bD-Sft" firstAttribute="centerX" secondItem="S44-3w-tO7" secondAttribute="centerX" id="S8t-qQ-00s"/>
+                            <constraint firstItem="S44-3w-tO7" firstAttribute="top" secondItem="mN9-kK-mgf" secondAttribute="bottom" constant="8" symbolic="YES" id="UVB-SZ-dLN"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="top" secondItem="YC1-dn-tpR" secondAttribute="bottom" constant="4" id="ma6-ks-Aq6"/>
+                            <constraint firstAttribute="centerX" secondItem="XpF-bD-Sft" secondAttribute="centerX" constant="60" id="pdz-Vt-gP4"/>
+                            <constraint firstItem="g4J-Un-0g8" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="17" id="vPO-Jk-g4T"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="96T-jv-lwF" appends="YES" id="GAB-x5-gZR"/>
@@ -87,7 +89,7 @@
                     <connections>
                         <outlet property="resultsTextView" destination="XpF-bD-Sft" id="MNg-0G-o16"/>
                         <outlet property="taxPctLabel" destination="iFS-Hl-kel" id="QK7-9z-g9O"/>
-                        <outlet property="taxPctSlider" destination="mN9-kK-mgf" id="b9S-lF-Jz9"/>
+                        <outlet property="taxPctSlider" destination="mN9-kK-mgf" id="vvl-pn-a8p"/>
                         <outlet property="totalTextField" destination="YC1-dn-tpR" id="hBv-t4-Tf3"/>
                     </connections>
                 </viewController>
@@ -98,7 +100,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="979" y="226"/>
+            <point key="canvasLocation" x="987" y="190"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Neh-7e-J0E">
