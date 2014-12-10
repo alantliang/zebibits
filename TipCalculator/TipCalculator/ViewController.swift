@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 fsa. All rights reserved.
 //
 
+// make sure to change the Main.storyboard attributes inspector to your respective device
+// then you can auto layout.
+// see: http://mathewsanders.com/designing-adaptive-layouts-for-iphone-6-plus/
+
 import UIKit
 
 class ViewController: UIViewController {
