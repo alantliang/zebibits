@@ -49,33 +49,34 @@
                                     <action selector="calculateTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1AB-vc-JgL"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpF-bD-Sft">
-                                <rect key="frame" x="87" y="187" width="208" height="256"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Q0y-Rh-ipE">
+                                <rect key="frame" x="16" y="187" width="343" height="334"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="m0K-bI-rmK"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="bjZ-sv-kXy"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="mN9-kK-mgf" firstAttribute="leading" secondItem="iFS-Hl-kel" secondAttribute="trailing" constant="8" symbolic="YES" id="2n4-rm-iGY"/>
-                            <constraint firstItem="iFS-Hl-kel" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="55x-5h-x54"/>
-                            <constraint firstItem="mN9-kK-mgf" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="6nK-NI-AfV"/>
-                            <constraint firstItem="iFS-Hl-kel" firstAttribute="top" secondItem="g4J-Un-0g8" secondAttribute="bottom" constant="13" id="FJL-VK-uCN"/>
-                            <constraint firstItem="YC1-dn-tpR" firstAttribute="leading" secondItem="mN9-kK-mgf" secondAttribute="leading" id="FK4-NW-QUJ"/>
-                            <constraint firstItem="mN9-kK-mgf" firstAttribute="trailing" secondItem="YC1-dn-tpR" secondAttribute="trailing" id="GbF-Yi-3iT"/>
-                            <constraint firstItem="mN9-kK-mgf" firstAttribute="top" secondItem="YC1-dn-tpR" secondAttribute="bottom" constant="4" id="K6u-Pk-IMp"/>
-                            <constraint firstItem="g4J-Un-0g8" firstAttribute="leading" secondItem="iFS-Hl-kel" secondAttribute="leading" id="Q3C-X1-kZk"/>
-                            <constraint firstItem="S44-3w-tO7" firstAttribute="top" secondItem="mN9-kK-mgf" secondAttribute="bottom" constant="8" symbolic="YES" id="UVB-SZ-dLN"/>
-                            <constraint firstItem="YC1-dn-tpR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="13" id="cJK-mg-85f"/>
-                            <constraint firstItem="XpF-bD-Sft" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="71" id="dWW-sf-3c2"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="XpF-bD-Sft" secondAttribute="bottom" constant="224" id="jQ1-fy-wCc"/>
-                            <constraint firstItem="XpF-bD-Sft" firstAttribute="top" secondItem="S44-3w-tO7" secondAttribute="bottom" constant="8" symbolic="YES" id="pE9-a3-ihA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XpF-bD-Sft" secondAttribute="trailing" constant="64" id="r85-BN-A9d"/>
-                            <constraint firstItem="g4J-Un-0g8" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="17" id="vPO-Jk-g4T"/>
-                            <constraint firstItem="S44-3w-tO7" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="zSd-bR-d4v"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="leading" secondItem="YC1-dn-tpR" secondAttribute="leading" id="3f8-z3-WbQ"/>
+                            <constraint firstItem="g4J-Un-0g8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="9O7-9e-cGd"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="leading" secondItem="iFS-Hl-kel" secondAttribute="trailing" constant="8" symbolic="YES" id="EUH-nv-DBv"/>
+                            <constraint firstItem="YC1-dn-tpR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="13" id="FVh-iX-Lej"/>
+                            <constraint firstItem="S44-3w-tO7" firstAttribute="top" secondItem="mN9-kK-mgf" secondAttribute="bottom" constant="8" symbolic="YES" id="IIc-jt-rf6"/>
+                            <constraint firstItem="iFS-Hl-kel" firstAttribute="top" secondItem="g4J-Un-0g8" secondAttribute="bottom" constant="13" id="PSV-3z-ixS"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Q0y-Rh-ipE" secondAttribute="bottom" constant="146" id="U5c-5j-C9d"/>
+                            <constraint firstItem="S44-3w-tO7" firstAttribute="centerX" secondItem="Q0y-Rh-ipE" secondAttribute="centerX" id="ZDc-gx-xXH"/>
+                            <constraint firstItem="Q0y-Rh-ipE" firstAttribute="top" secondItem="S44-3w-tO7" secondAttribute="bottom" constant="8" symbolic="YES" id="aFu-KD-OEI"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="trailing" secondItem="Q0y-Rh-ipE" secondAttribute="trailing" id="bqV-XZ-7to"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="top" secondItem="YC1-dn-tpR" secondAttribute="bottom" constant="4" id="hQx-En-62F"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="trailing" secondItem="YC1-dn-tpR" secondAttribute="trailing" id="oI3-iw-wXt"/>
+                            <constraint firstItem="Q0y-Rh-ipE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="r8a-WA-paV"/>
+                            <constraint firstItem="iFS-Hl-kel" firstAttribute="leading" secondItem="g4J-Un-0g8" secondAttribute="leading" id="sCV-Ql-Cda"/>
+                            <constraint firstItem="mN9-kK-mgf" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="sdm-A2-W1Z"/>
+                            <constraint firstItem="S44-3w-tO7" firstAttribute="top" secondItem="iFS-Hl-kel" secondAttribute="bottom" constant="13" id="yEt-nr-SDr"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="96T-jv-lwF" appends="YES" id="GAB-x5-gZR"/>
@@ -85,7 +86,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="resultsTextView" destination="XpF-bD-Sft" id="MNg-0G-o16"/>
+                        <outlet property="tableView" destination="Q0y-Rh-ipE" id="S5D-nI-xmv"/>
                         <outlet property="taxPctLabel" destination="iFS-Hl-kel" id="QK7-9z-g9O"/>
                         <outlet property="taxPctSlider" destination="mN9-kK-mgf" id="rRm-KU-cg3"/>
                         <outlet property="totalTextField" destination="YC1-dn-tpR" id="hBv-t4-Tf3"/>
