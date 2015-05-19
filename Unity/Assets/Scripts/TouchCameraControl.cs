@@ -18,7 +18,7 @@ public class TouchCameraControl : MonoBehaviour
 	
 	public float inertiaDuration = 1.0f;
 	
-	private Camera _camera;
+	public Camera mainCamera;
 	
 	private float minX, maxX, minY, maxY;
 	private float horizontalExtent, verticalExtent;
@@ -29,15 +29,13 @@ public class TouchCameraControl : MonoBehaviour
 	
 	void Start ()
 	{
-		_camera = Camera.main;
+		// maxZoom = 0.5f * (mapWidth / mainCamera.aspect);
 		
-		maxZoom = 0.5f * (mapWidth / _camera.aspect);
+		// if (mapWidth > mapHeight)
+		// 	maxZoom = 0.5f * mapHeight;
 		
-		if (mapWidth > mapHeight)
-			maxZoom = 0.5f * mapHeight;
-		
-		if (_camera.orthographicSize > maxZoom)
-			_camera.orthographicSize = maxZoom;
+		if (mainCamera.orthographicSize > maxZoom)
+			mainCamera.orthographicSize = maxZoom;
 		
 		CalculateLevelBounds ();
 	}
@@ -45,8 +43,8 @@ public class TouchCameraControl : MonoBehaviour
 	void Update ()
 	{
 		if (updateZoomSensitivity) {
-			moveSensitivityX = _camera.orthographicSize / 5.0f;
-			moveSensitivityY = _camera.orthographicSize / 5.0f;
+			moveSensitivityX = mainCamera.orthographicSize / 5.0f;
+			moveSensitivityY = mainCamera.orthographicSize / 5.0f;
 		}
 		
 		Touch[] touches = Input.touches;
@@ -57,7 +55,7 @@ public class TouchCameraControl : MonoBehaviour
 				//slow down over time
 				float t = (Time.time - timeTouchPhaseEnded) / inertiaDuration;
 				float frameVelocity = Mathf.Lerp (scrollVelocity, 0.0f, t);
-				_camera.transform.position += -(Vector3)scrollDirection.normalized * (frameVelocity * 0.05f) * Time.deltaTime;
+				mainCamera.transform.position += -(Vector3)scrollDirection.normalized * (frameVelocity * 0.05f) * Time.deltaTime;
 				
 				if (t >= 1.0f)
 					scrollVelocity = 0.0f;
@@ -65,6 +63,8 @@ public class TouchCameraControl : MonoBehaviour
 		}
 		
 		if (touches.Length > 0) {
+			// Single touch choose
+
 			//Single touch (move)
 			if (touches.Length == 1) {
 				if (touches [0].phase == TouchPhase.Began) {
@@ -78,7 +78,7 @@ public class TouchCameraControl : MonoBehaviour
 					float positionY = delta.y * moveSensitivityY * Time.deltaTime;
 					positionY = invertMoveY ? positionY : positionY * -1;
 					
-					_camera.transform.position += new Vector3 (positionX, positionY, 0);
+					mainCamera.transform.position += new Vector3 (positionX, positionY, 0);
 					
 					scrollDirection = touches [0].deltaPosition.normalized;
 					scrollVelocity = touches [0].deltaPosition.magnitude / touches [0].deltaTime;
@@ -94,7 +94,7 @@ public class TouchCameraControl : MonoBehaviour
 			
 			//Double touch (zoom)
 			if (touches.Length == 2) {
-				Vector2 cameraViewsize = new Vector2 (_camera.pixelWidth, _camera.pixelHeight);
+				Vector2 cameraViewsize = new Vector2 (mainCamera.pixelWidth, mainCamera.pixelHeight);
 				
 				Touch touchOne = touches [0];
 				Touch touchTwo = touches [1];
@@ -107,12 +107,12 @@ public class TouchCameraControl : MonoBehaviour
 				
 				float deltaMagDiff = prevTouchDeltaMag - touchDeltaMag;
 				
-				_camera.transform.position += _camera.transform.TransformDirection ((touchOnePrevPos + touchTwoPrevPos - cameraViewsize) * _camera.orthographicSize / cameraViewsize.y);
+				mainCamera.transform.position += mainCamera.transform.TransformDirection ((touchOnePrevPos + touchTwoPrevPos - cameraViewsize) * mainCamera.orthographicSize / cameraViewsize.y);
 				
-				_camera.orthographicSize += deltaMagDiff * orthoZoomSpeed;
-				_camera.orthographicSize = Mathf.Clamp (_camera.orthographicSize, minZoom, maxZoom) - 0.001f;
+				mainCamera.orthographicSize += deltaMagDiff * orthoZoomSpeed;
+				mainCamera.orthographicSize = Mathf.Clamp (mainCamera.orthographicSize, minZoom, maxZoom) - 0.001f;
 				
-				_camera.transform.position -= _camera.transform.TransformDirection ((touchOne.position + touchTwo.position - cameraViewsize) * _camera.orthographicSize / cameraViewsize.y);
+				mainCamera.transform.position -= mainCamera.transform.TransformDirection ((touchOne.position + touchTwo.position - cameraViewsize) * mainCamera.orthographicSize / cameraViewsize.y);
 				
 				CalculateLevelBounds ();
 			}
@@ -121,8 +121,8 @@ public class TouchCameraControl : MonoBehaviour
 	
 	void CalculateLevelBounds ()
 	{
-		verticalExtent = _camera.orthographicSize;
-		horizontalExtent = _camera.orthographicSize * Screen.width / Screen.height;
+		verticalExtent = mainCamera.orthographicSize;
+		horizontalExtent = mainCamera.orthographicSize * Screen.width / Screen.height;
 		minX = horizontalExtent - mapWidth / 2.0f;
 		maxX = mapWidth / 2.0f - horizontalExtent;
 		minY = verticalExtent - mapHeight / 2.0f;
@@ -131,10 +131,10 @@ public class TouchCameraControl : MonoBehaviour
 	
 	void LateUpdate ()
 	{
-		Vector3 limitedCameraPosition = _camera.transform.position;
+		Vector3 limitedCameraPosition = mainCamera.transform.position;
 		limitedCameraPosition.x = Mathf.Clamp (limitedCameraPosition.x, minX, maxX);
 		limitedCameraPosition.y = Mathf.Clamp (limitedCameraPosition.y, minY, maxY);
-		_camera.transform.position = limitedCameraPosition;
+		mainCamera.transform.position = limitedCameraPosition;
 	}
 	
 	void OnDrawGizmos ()
