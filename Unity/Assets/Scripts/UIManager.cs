@@ -5,14 +5,22 @@ public class UIManager : MonoBehaviour
 {
 	public static UIManager instance = null;
 
-	void Update () {
+	void Update ()
+	{
 	}
 
-	public void GoToPetInfoScene() {
+	public void GoToPetInfoScene ()
+	{
 		Application.LoadLevel ("PetInfo");
 	}
 
-	public void GoToMain() {
+	public void GoToMain ()
+	{
 		Application.LoadLevel ("Main");
+	}
+	
+	public void GoToBuildingShop ()
+	{
+		Application.LoadLevel ("BuildingShop");
 	}
 }
