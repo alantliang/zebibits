@@ -54,7 +54,9 @@
      <Compile Include="Assets\Scripts\Loader.cs" />
      <Compile Include="Assets\Scripts\MainEnvironmentUI.cs" />
      <Compile Include="Assets\Scripts\MainScreen.cs" />
+     <Compile Include="Assets\Scripts\MoneyDisplay.cs" />
      <Compile Include="Assets\Scripts\PetInfo\ProgressBar.cs" />
+     <Compile Include="Assets\Scripts\PlayerWallet.cs" />
      <Compile Include="Assets\Scripts\SetScreenOrientation.cs" />
      <Compile Include="Assets\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\TouchCameraControl.cs" />
