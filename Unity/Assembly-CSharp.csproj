@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\TouchCameraControl.cs" />
      <Compile Include="Assets\Scripts\TouchMove.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
+     <None Include="Assets\Art\notes.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -3,16 +3,18 @@
 // set up ======================================================================
 // get all the tools we need
 var express  = require('express');
-var app      = express();
-var port     = process.env.PORT || 8080;
+var app = express();
+var port = process.env.PORT || 8080;
 
 var passport = require('passport');
-var flash    = require('connect-flash');
+var flash = require('connect-flash');
 
 // configuration ===============================================================
 // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
+
+var jwtSecret = require("./config/jwtSecret");
 
 app.configure(function() {
 
@@ -22,6 +24,7 @@ app.configure(function() {
 	app.use(express.bodyParser()); // get information from html forms
 
 	app.set('view engine', 'ejs'); // set up ejs for templating
+	app.set('superSecret', jwtSecret.secret); // for token secret variable
 
 	// required for passport
 	app.use(express.session({ secret: 'vidyapathaisalwaysrunning' } )); // session secret
