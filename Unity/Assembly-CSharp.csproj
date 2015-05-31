@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Grid.cs" />
      <Compile Include="Assets\Scripts\Loader.cs" />
+     <Compile Include="Assets\Scripts\Login\LoginScreen.cs" />
      <Compile Include="Assets\Scripts\MainEnvironmentUI.cs" />
      <Compile Include="Assets\Scripts\MainScreen.cs" />
      <Compile Include="Assets\Scripts\MoneyDisplay.cs" />

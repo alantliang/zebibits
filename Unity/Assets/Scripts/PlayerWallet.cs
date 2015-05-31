@@ -6,6 +6,7 @@ using System;
 
 public class PlayerWallet : MonoBehaviour
 {
+	string url = "http://zebibits.com:8080/money?id=liang";
 	private JSONNode node;
 	private int money;
 	public int Money {
@@ -14,6 +15,9 @@ public class PlayerWallet : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		WWW www = new WWW (url);
+		StartCoroutine (WaitForRequest (www));
+		
 		string jsonStream = "";
 		using (StreamReader sr = new StreamReader(GetPlayerStatsFilepath ())) {
 			string line;
@@ -24,6 +28,18 @@ public class PlayerWallet : MonoBehaviour
 		
 		node = JSON.Parse (jsonStream);
 		money = Convert.ToInt32 (node ["money"]);
+	}
+	
+	IEnumerator WaitForRequest (WWW www)
+	{
+		yield return www;
+		
+		// check for errors
+		if (www.error == null) {
+			Debug.Log ("WWW Ok!: " + www.text);
+		} else {
+			Debug.Log ("WWW Error: " + www.error);
+		}
 	}
 	
 	string GetPlayerStatsFilepath ()

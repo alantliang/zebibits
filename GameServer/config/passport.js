@@ -21,6 +21,7 @@ module.exports = function(passport) {
 
     // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
+        console.log(user.id);
         done(null, user.id);
     });
 
@@ -46,6 +47,8 @@ module.exports = function(passport) {
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
         function(req, username, password, done) {
+            console.log(username);
+            console.log(password);
             // find a user whose email is the same as the forms email
             // we are checking to see if the user trying to login already exists
             connection.query("SELECT * FROM users WHERE username = ?",[username], function(err, rows) {
@@ -88,6 +91,9 @@ module.exports = function(passport) {
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
         function(req, username, password, done) { // callback with email and password from our form
+            console.log('local-login');
+            console.log(username);
+            console.log(password);
             connection.query("SELECT * FROM users WHERE username = ?",[username], function(err, rows){
                 if (err)
                     return done(err);

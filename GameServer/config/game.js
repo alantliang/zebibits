@@ -1,7 +1,7 @@
 // config/game.js
 
 var mysql = require('mysql');
-var dbconfig = require('./database');
+var dbconfig = require('./gameDatabase');
 var connection = mysql.createConnection(dbconfig.connection);
 
 connection.query('USE ' + dbconfig.database);
@@ -20,6 +20,13 @@ function addMoney(username, value, done) {
         });
 }
 
+function getUsers(done) {
+    connection.query("SELECT * FROM users ", function(err, rows) {
+        done(err, rows[0]);
+    });
+}
+
+
 function testAddMoney() {
     addMoney("liang", 20, function(err) {
         if (err) {
@@ -30,7 +37,19 @@ function testAddMoney() {
     });
 }
 
+function testGetUsers() {
+    getUsers(function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(data);
+        }
+    });
+}
+
 // testAddMoney();
+// testGetUsers();
 
 exports.getMoney = getMoney;
 exports.addMoney = addMoney;
+exports.getUsers = getUsers;
