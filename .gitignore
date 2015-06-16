@@ -1,6 +1,9 @@
 # ignore iOS
 ios/
 
+# ignore passportjwt
+passportjwt/
+
 # =============== #
 # Unity generated #
 # =============== #

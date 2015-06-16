@@ -1,0 +1,89 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'bcrpyt-nodejs' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json node-token-jwt@ No description
+6 warn package.json node-token-jwt@ No repository field.
+7 warn package.json node-token-jwt@ No README data
+8 verbose readDependencies using package.json deps
+9 verbose cache add [ 'bcrpyt-nodejs', null ]
+10 verbose cache add name=undefined spec="bcrpyt-nodejs" args=["bcrpyt-nodejs",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'bcrpyt-nodejs',
+11 verbose parsed url   path: 'bcrpyt-nodejs',
+11 verbose parsed url   href: 'bcrpyt-nodejs' }
+12 silly lockFile 87095a35-bcrpyt-nodejs bcrpyt-nodejs
+13 verbose lock bcrpyt-nodejs C:\Users\Alan\AppData\Roaming\npm-cache\87095a35-bcrpyt-nodejs.lock
+14 silly lockFile 87095a35-bcrpyt-nodejs bcrpyt-nodejs
+15 silly lockFile 87095a35-bcrpyt-nodejs bcrpyt-nodejs
+16 verbose addNamed [ 'bcrpyt-nodejs', '' ]
+17 verbose addNamed [ null, '*' ]
+18 silly lockFile ce4074a3-bcrpyt-nodejs bcrpyt-nodejs@
+19 verbose lock bcrpyt-nodejs@ C:\Users\Alan\AppData\Roaming\npm-cache\ce4074a3-bcrpyt-nodejs.lock
+20 silly addNameRange { name: 'bcrpyt-nodejs', range: '*', hasData: false }
+21 verbose request where is /bcrpyt-nodejs
+22 verbose request registry https://registry.npmjs.org/
+23 verbose request id e1c13785c9da4e2e
+24 verbose url raw /bcrpyt-nodejs
+25 verbose url resolving [ 'https://registry.npmjs.org/', './bcrpyt-nodejs' ]
+26 verbose url resolved https://registry.npmjs.org/bcrpyt-nodejs
+27 verbose request where is https://registry.npmjs.org/bcrpyt-nodejs
+28 info trying registry request attempt 1 at 20:55:17
+29 http GET https://registry.npmjs.org/bcrpyt-nodejs
+30 http 404 https://registry.npmjs.org/bcrpyt-nodejs
+31 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+31 verbose headers   'content-type': 'application/json',
+31 verbose headers   'cache-control': 'max-age=0',
+31 verbose headers   'content-length': '51',
+31 verbose headers   'accept-ranges': 'bytes',
+31 verbose headers   date: 'Tue, 16 Jun 2015 00:55:17 GMT',
+31 verbose headers   via: '1.1 varnish',
+31 verbose headers   age: '0',
+31 verbose headers   connection: 'keep-alive',
+31 verbose headers   'x-served-by': 'cache-iad2141-IAD',
+31 verbose headers   'x-cache': 'MISS',
+31 verbose headers   'x-cache-hits': '0',
+31 verbose headers   'x-timer': 'S1434416117.500054,VS0,VE18' }
+32 silly registry.get cb [ 404,
+32 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+32 silly registry.get     'content-type': 'application/json',
+32 silly registry.get     'cache-control': 'max-age=0',
+32 silly registry.get     'content-length': '51',
+32 silly registry.get     'accept-ranges': 'bytes',
+32 silly registry.get     date: 'Tue, 16 Jun 2015 00:55:17 GMT',
+32 silly registry.get     via: '1.1 varnish',
+32 silly registry.get     age: '0',
+32 silly registry.get     connection: 'keep-alive',
+32 silly registry.get     'x-served-by': 'cache-iad2141-IAD',
+32 silly registry.get     'x-cache': 'MISS',
+32 silly registry.get     'x-cache-hits': '0',
+32 silly registry.get     'x-timer': 'S1434416117.500054,VS0,VE18' } ]
+33 silly lockFile ce4074a3-bcrpyt-nodejs bcrpyt-nodejs@
+34 silly lockFile ce4074a3-bcrpyt-nodejs bcrpyt-nodejs@
+35 error 404 404 Not Found: bcrpyt-nodejs
+35 error 404
+35 error 404 'bcrpyt-nodejs' is not in the npm registry.
+35 error 404 You should bug the author to publish it
+35 error 404 It was specified as a dependency of 'node-token-jwt'
+35 error 404
+35 error 404 Note that you can also install from a
+35 error 404 tarball, folder, or http url, or git url.
+36 error System Windows_NT 6.2.9200
+37 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "bcrpyt-nodejs"
+38 error cwd C:\Users\Alan\Documents\GitHub\zebibits\AuthTokenTest
+39 error node -v v0.10.33
+40 error npm -v 1.4.28
+41 error code E404
+42 verbose exit [ 1, true ]
