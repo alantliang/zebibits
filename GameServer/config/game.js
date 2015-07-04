@@ -7,14 +7,14 @@ var connection = mysql.createConnection(dbconfig.connection);
 connection.query('USE ' + dbconfig.database);
 
 function getMoney(username, done) {
-    connection.query("SELECT `money` FROM users WHERE `name` = ? ", [username], function(err, rows) {
+    connection.query("SELECT `money` FROM money_test WHERE `username` = ? ", [username], function(err, rows) {
         done(err, rows[0]);
     });
 }
 
 function addMoney(username, value, done) {
     // currently username is not used. We should find the primary id of the user?
-    connection.query("UPDATE users SET `money` = `money` + ? WHERE `id` = ? ", 
+    connection.query("UPDATE money_test SET `money` = `money` + ? WHERE `id` = ? ", 
         [value, 1], function(err) {
             done(err);
         });
@@ -28,7 +28,7 @@ function getUsers(done) {
 
 
 function testAddMoney() {
-    addMoney("liang", 20, function(err) {
+    addMoney("supakul", 20, function(err) {
         if (err) {
             console.log("There was an error:");
             console.log(err);
@@ -47,6 +47,17 @@ function testGetUsers() {
     });
 }
 
+function testGetMoney() {
+    getMoney("supakul", function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(data);
+        }
+    });
+}
+
+testGetMoney();
 // testAddMoney();
 // testGetUsers();
 

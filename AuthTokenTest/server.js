@@ -86,6 +86,7 @@ apiRoutes.post('/authenticate', function(req, res) {
 				var token = jwt.sign(user, app.get('superSecret'), {
 					expiresInMinutes: 1440 // expires in 24 hours
 				});
+				console.log("sending token: " + token);
 				res.json({
 					success: true,
 					message: 'Enjoy your token!',
@@ -97,6 +98,7 @@ apiRoutes.post('/authenticate', function(req, res) {
 });
 
 // route middleware to verify a token
+// this must be after the above functions that allow user to login
 apiRoutes.use(function(req, res, next) {
 
 	// check header or url parameters or post parameters for token
@@ -142,10 +144,14 @@ apiRoutes.get('/', function(req, res) {
 // route to return all users (GET http://localhost:8080/api/users)
 // need to set 
 apiRoutes.get('/users', function(req, res) {
-	login.getAllUsers(function(err, users) {
+	console.log(req.decoded);
+	login.getUser(req.decoded.username, req.decoded.password, function(err, users) {
 		res.json(users);
 	})
 });
+
+
+// game routes
 
 
 
@@ -156,4 +162,12 @@ app.use('/api', apiRoutes);
 // start the server ======
 // =======================
 app.listen(port);
+// var fs = require('fs');
+// var https = require('https');
+// var options = {
+// 	key: fs.readFileSync(process.cwd() + '/OpenSSL/key.pem'),
+// 	cert: fs.readFileSync(process.cwd() + '/OpenSSL/cert.pem')
+// };
+
+// https.createServer(options, app).listen(port);
 console.log('Magic happens at http://localhost:' + port);

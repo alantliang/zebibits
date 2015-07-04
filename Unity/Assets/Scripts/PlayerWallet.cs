@@ -6,7 +6,7 @@ using System;
 
 public class PlayerWallet : MonoBehaviour
 {
-	string url = "http://zebibits.com:8080/money?id=liang";
+	string url = "http://localhost:8080/api/money?id=liang";
 	private JSONNode node;
 	private int money;
 	public int Money {

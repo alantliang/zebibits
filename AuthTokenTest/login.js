@@ -8,10 +8,14 @@ function findUser(username, callback) {
 				console.log("There was an error with the SQL query: ");
 				callback(err);
 			}
-			if (rows.length) {
+			if (rows.length == 0) {
+				// no results found, so pass null user
+				callback(err, null);
+			} else if (rows.length == 1) {
 				callback(err, rows[0]);
-				// console.log(rows);
-			}
+			} else {
+				console.log("Too many users!");
+			}  // we might want to handle if multiple rows are returned
 		});
 	});
 }
@@ -30,11 +34,16 @@ function createUser(username, password, callback) {
 	});
 }
 
-function getAllUsers(callback) {
+function getUser(username, password, callback) {
 	db.getConnection(function(err, connection) {
-		connection.query("SELECT * FROM users", function(err, rows) {
+		console.log('Im here');
+		var query = 'SELECT * FROM users U JOIN player P JOIN owner O JOIN pet ON ' + 
+			'P.user_id = U.id AND O.user_id = U.id AND pet.pet_id = O.pet_id ' + 
+			'WHERE U.username = (?) AND U.password = (?)';
+		console.log(query);
+		connection.query(query, [username, password], function(err, rows) {
 			if (err) {
-				console.log("There was an error with the SQL query: ");
+				console.log("There was an error with the SQL query: " + err);
 				callback(err);
 			}
 			if (rows.length) {
@@ -54,4 +63,5 @@ function getAllUsers(callback) {
 // });
 
 exports.findUser = findUser;
-exports.getAllUsers = getAllUsers;
+exports.getUser = getUser;
+// exports.getAllUsers = getAllUsers;

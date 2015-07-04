@@ -4,16 +4,20 @@
   "scripts": {
     "start": "node ./server"
   },
-  "dependencies" : {
-    "express" : "~3.4.4", 			
-    "ejs" : "~0.8.5",
-    "passport" : "~0.1.17", 		
-    "passport-local" : "~0.1.6", 	
-    "passport-facebook" : "~1.0.2", 
-    "passport-twitter" : "~1.0.2", 	
-    "passport-google-oauth" : "~0.1.5",
-    "connect-flash" : "~0.1.1", 	
-    "bcrypt-nodejs" : "latest" ,
-	"mysql" : "*"	
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "body-parser": "^1.12.4",
+    "connect-flash": "~0.1.1",
+    "ejs": "~0.8.5",
+    "express": "^3.4.8",
+    "jsonwebtoken": "^5.0.1",
+    "mongoose": "^4.0.5",
+    "morgan": "^1.5.3",
+    "mysql": "*",
+    "passport": "~0.1.17",
+    "passport-facebook": "~1.0.2",
+    "passport-google-oauth": "~0.1.5",
+    "passport-local": "~0.1.6",
+    "passport-twitter": "~1.0.2"
   }
 }

@@ -6,5 +6,4 @@ module.exports = {
         'password': 'hbFs!er225'
     },
 	'database': 'zebibits',
-    'users_table': 'users'
 };
