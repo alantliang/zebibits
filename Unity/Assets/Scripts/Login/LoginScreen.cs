@@ -24,7 +24,7 @@ public class LoginScreen : MonoBehaviour
 		WWWForm form = new WWWForm ();
 		form.AddField ("name", email);
 		form.AddField ("password", password);
-		WWW www = new WWW ("http://localhost:8080/api/authenticate", form);
+		WWW www = new WWW ("http://zebibits.com:1337/api/authenticate", form);
 		// WWW www = new WWW ("http://zebibits.com:8080/login", form);		
 		Debug.Log ("Testing...");
 		StartCoroutine (WaitForRequest (www));
@@ -46,9 +46,10 @@ public class LoginScreen : MonoBehaviour
 			// save auth-token and go to main screen
 			JSONNode response = JSON.Parse (www.text);
 			if (String.Compare (response ["success"], "true") == 0) {
-				Debug.Log (response ["token"]);
-				textErrorMsg.text = response ["token"];
-				textErrorMsg.color = Color.green;
+				// successful http request
+				string token = response["token"];
+				saveToken(token);
+				SceneManager.instance.GoToMain ();
 			} else {
 				Debug.Log (response ["message"]);
 				textErrorMsg.text = response ["message"];
@@ -58,6 +59,14 @@ public class LoginScreen : MonoBehaviour
 			// change ErrorMsg to login error
 			Debug.Log ("WWW Error: " + www.error);
 		}
+	}
+
+	private void saveToken(string token) {
+		GameControl.control.playerData.AuthToken = token;
+		Debug.Log (token);
+		Text textErrorMsg = GameObject.Find ("TextErrorMsg").GetComponent<Text> ();
+		textErrorMsg.text = token;
+		textErrorMsg.color = Color.green;
 	}
 	
 	public void OnLoginClicked ()
