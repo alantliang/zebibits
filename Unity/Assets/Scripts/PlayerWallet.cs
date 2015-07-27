@@ -15,6 +15,12 @@ public class PlayerWallet : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		
+	}
+	
+	private void GetMoneyFromURL ()
+	{
+		GetMoneyFromURL ();
 		WWW www = new WWW (url);
 		StartCoroutine (WaitForRequest (www));
 		

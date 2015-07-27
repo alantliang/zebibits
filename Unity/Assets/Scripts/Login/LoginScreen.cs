@@ -10,7 +10,10 @@ public class LoginScreen : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	
+		GameControl.control.Load ();
+		if (GameControl.control.IsLoggedIn ()) {
+			SceneManager.instance.GoToMain ();
+		}
 	}
 	
 	// Update is called once per frame
@@ -21,6 +24,7 @@ public class LoginScreen : MonoBehaviour
 	
 	void Login (string email, string password)
 	{
+		// Login to website
 		WWWForm form = new WWWForm ();
 		form.AddField ("name", email);
 		form.AddField ("password", password);
@@ -47,8 +51,8 @@ public class LoginScreen : MonoBehaviour
 			JSONNode response = JSON.Parse (www.text);
 			if (String.Compare (response ["success"], "true") == 0) {
 				// successful http request
-				string token = response["token"];
-				saveToken(token);
+				string token = response ["token"];
+				saveToken (token);
 				SceneManager.instance.GoToMain ();
 			} else {
 				Debug.Log (response ["message"]);
@@ -61,7 +65,8 @@ public class LoginScreen : MonoBehaviour
 		}
 	}
 
-	private void saveToken(string token) {
+	private void saveToken (string token)
+	{
 		GameControl.control.playerData.AuthToken = token;
 		Debug.Log (token);
 		Text textErrorMsg = GameObject.Find ("TextErrorMsg").GetComponent<Text> ();
