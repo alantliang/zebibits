@@ -27,6 +27,7 @@ public class GameControl : MonoBehaviour
 
 		// force a different code path in the BinaryFormatter that doesn't rely on run-time code generation which breaks in ios
 		Environment.SetEnvironmentVariable ("MONO_REFLECTION_SERIALIZER", "yes");
+		Load ();
 	}
 	
 	void OnGUI ()
@@ -68,8 +69,8 @@ public class GameControl : MonoBehaviour
 	public bool IsLoggedIn ()
 	{
 		Load ();
-		Debug.Log (playerData.Username);
-		Debug.Log (playerData.AuthToken);
+		
+		
 		return (!String.IsNullOrEmpty (playerData.AuthToken));
 	}
 

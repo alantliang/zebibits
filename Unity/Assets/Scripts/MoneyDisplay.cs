@@ -13,9 +13,7 @@ public class MoneyDisplay : MonoBehaviour
 	void Update ()
 	{
 		// this should listen to a OnMoneyChangedEvent
-		GameObject playerWallet = GameObject.Find ("PlayerWallet");
-		PlayerWallet playerWalletScript = (PlayerWallet)playerWallet.GetComponent ("PlayerWallet");
 		TextMesh myTextMesh = (TextMesh)GetComponent ("TextMesh");
-		myTextMesh.text = "MONEY: " + playerWalletScript.Money.ToString ();
+		myTextMesh.text = "MONEY: " + GameControl.control.playerData.Money;
 	}
 }

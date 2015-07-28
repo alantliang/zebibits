@@ -5,7 +5,8 @@ public class SceneManager : MonoBehaviour
 {
 	public static SceneManager instance = null;
 
-	void Awake () {
+	void Awake ()
+	{
 		if (instance == null) {
 			DontDestroyOnLoad (gameObject);
 			instance = this;
@@ -23,7 +24,7 @@ public class SceneManager : MonoBehaviour
 		Application.LoadLevel ("Main");
 	}
 
-	public void GoToLogin()
+	public void GoToLogin ()
 	{
 		Application.LoadLevel ("Login");
 	}
