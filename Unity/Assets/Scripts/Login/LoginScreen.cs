@@ -67,7 +67,9 @@ public class LoginScreen : MonoBehaviour
 
 	private void saveToken (string token)
 	{
+		Debug.Log ("LoginScreen: saveToken");
 		GameControl.control.playerData.AuthToken = token;
+		Debug.Log ("LoginScreen: saveToken: set token");
 		GameControl.control.Save ();
 		Debug.Log (token);
 		Text textErrorMsg = GameObject.Find ("TextErrorMsg").GetComponent<Text> ();

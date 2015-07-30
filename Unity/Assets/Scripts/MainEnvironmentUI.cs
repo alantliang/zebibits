@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MainEnvironmentUI : MonoBehaviour {
+public class MainEnvironmentUI : MonoBehaviour
+{
 	public GameObject buildingPanel; // Assign in inspector
 	private bool isShowing = false;
 
-	void Update () {
+	void Update ()
+	{
 	}
 	
 	public void SetIsShowing (bool value)

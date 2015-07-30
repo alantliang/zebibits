@@ -1,13 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MainEnvironmentUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Login\Logout.cs">
     <Files>
-      <File FileName="Assets\Scripts\Login\LoginScreen.cs" Line="23" Column="3" />
-      <File FileName="Assets\Scripts\PersistentFiles\GameControl.cs" Line="32" Column="2" />
+      <File FileName="Assets\Scripts\Login\Logout.cs" Line="24" Column="2" />
+      <File FileName="Assets\Scripts\Login\LoginScreen.cs" Line="39" Column="3" />
+      <File FileName="Assets\Scripts\PersistentFiles\GameControl.cs" Line="79" Column="11" />
       <File FileName="Assets\Scripts\Singletons\SceneManager.cs" Line="22" Column="22" />
-      <File FileName="Assets\Scripts\PlayerWallet.cs" Line="69" Column="16" />
-      <File FileName="Assets\Scripts\MoneyDisplay.cs" Line="17" Column="44" />
-      <File FileName="Assets\Scripts\MainEnvironmentUI.cs" Line="14" Column="18" />
+      <File FileName="Assets\Scripts\MainEnvironmentUI.cs" Line="15" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

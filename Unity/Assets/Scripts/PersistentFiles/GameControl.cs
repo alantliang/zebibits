@@ -10,7 +10,8 @@ public class GameControl : MonoBehaviour
 
 	// stactic variable to access this object faster
 	public static GameControl control;
-
+	
+	private string filePath;
 	public PlayerData playerData = new PlayerData ();
 	public PetData petData = new PetData ();
 	public bool testDisplay = true;
@@ -21,6 +22,7 @@ public class GameControl : MonoBehaviour
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);
 			control = this;
+			filePath = Path.Combine (Application.persistentDataPath, "playerInfo.dat");
 		} else if (control != this) {
 			Destroy (gameObject);
 		}
@@ -47,8 +49,10 @@ public class GameControl : MonoBehaviour
 
 	public void Save ()
 	{
+		Debug.Log (Application.persistentDataPath);
+		Debug.Log (filePath);
 		BinaryFormatter bf = new BinaryFormatter ();
-		FileStream file = File.Create (Application.persistentDataPath + "/playerInfo.dat");
+		FileStream file = File.Create (filePath);
 		AllData allData = new AllData (playerData, petData);
 		bf.Serialize (file, allData);
 		file.Close ();
@@ -56,9 +60,9 @@ public class GameControl : MonoBehaviour
 
 	public void Load ()
 	{
-		if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) {
+		if (File.Exists (filePath)) {
 			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream file = File.Open (Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
+			FileStream file = File.Open (filePath, FileMode.Open);
 			AllData allData = (AllData)bf.Deserialize (file);
 			file.Close ();
 			playerData = allData.playerData;
@@ -66,11 +70,18 @@ public class GameControl : MonoBehaviour
 		}
 	}
 	
+	public void ClearLocalStorage ()
+	{
+		if (File.Exists (filePath)) {
+			playerData = new PlayerData ();
+			petData = new PetData ();
+			File.Delete (filePath);
+		}
+	}
+	
 	public bool IsLoggedIn ()
 	{
 		Load ();
-		
-		
 		return (!String.IsNullOrEmpty (playerData.AuthToken));
 	}
 
