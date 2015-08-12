@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System;
 
 // from http://savalishunitytutorials.com/updatedtouchmovement.cs
 public class TouchCameraControl : MonoBehaviour
@@ -71,7 +71,7 @@ public class TouchCameraControl : MonoBehaviour
 					scrollVelocity = 0.0f;
 				} else if (touches [0].phase == TouchPhase.Moved) {
 					Vector2 delta = touches [0].deltaPosition;
-					
+					Debug.Log (String.Format("X: {0}, Y: {1}", delta.x, delta.y));
 					float positionX = delta.x * moveSensitivityX * Time.deltaTime;
 					positionX = invertMoveX ? positionX : positionX * -1;
 					
