@@ -111,11 +111,14 @@ public class GameControl : MonoBehaviour
 	[Serializable]
 	public class PetData
 	{
+		// chao garden has: Swim, Fly, Run, Power, Stamina
 		public UInt32 PetId { get; set; }
 		public string Petname { get; set; }
 		public UInt64 Intelligence { get; set; }
-		public UInt64 Strength { get; set; }
-		public UInt64 Happiness { get; set; }
+		public UInt64 Power { get; set; }
+		public UInt64 Speed { get; set; }
+		public UInt64 Fly { get; set; }
 		public UInt64 Stamina { get; set; }
+		public UInt64 Happiness { get; set; }
 	}
 }
